@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap");
+
+:root {
+  --order-bg: #131313;
+  --order-card: #1e1e1e;
+  --order-section: #2a2a2a;
+  --order-text: #e5e2e1;
+  --order-muted: #a0a0a0;
+  --order-primary: #ffb59a;
+  --order-secondary: #87d982;
+  --order-tertiary: #ffb95f;
+  --order-border: rgba(255, 255, 255, 0.1);
+  --order-headline: "Plus Jakarta Sans", sans-serif;
+  --order-body: "Inter", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; background: var(--order-bg); }
+body { overflow-x: hidden; color: var(--order-text); font-family: var(--order-body); -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; }
+button { font: inherit; cursor: pointer; }
+
+.order-placed-page { min-height: 100vh; min-height: 100dvh; padding-bottom: 24px; background: var(--order-bg); }
+.order-placed-header { position: fixed; top: 0; right: 0; left: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 16px; border-bottom: 1px solid var(--order-border); background: rgba(30, 30, 30, 0.7); box-shadow: 0 2px 12px rgba(0, 0, 0, 0.22); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.order-placed-header h1 { margin: 0; color: var(--order-primary); font-family: var(--order-headline); font-size: 21px; font-weight: 700; line-height: 28px; text-align: center; }
+.order-placed-back-button { display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--order-primary); transition: background-color 160ms ease, color 160ms ease, transform 160ms ease; }
+.order-placed-back-button:hover { background: var(--order-section); color: #fff; }
+.order-placed-back-button:active { transform: scale(0.94); }
+.order-placed-header-spacer { width: 40px; height: 40px; }
+.order-placed-main { display: grid; place-items: center; min-height: 100vh; min-height: 100dvh; padding: 88px 16px 32px; }
+.order-placed-card { display: flex; flex-direction: column; align-items: center; width: min(100%, 448px); padding: 48px; border: 1px solid var(--order-border); border-radius: 16px; background: var(--order-card); text-align: center; box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5); animation: order-card-in 420ms ease-out both; }
+.order-placed-icon { display: grid; place-items: center; width: 80px; height: 80px; margin-bottom: 24px; border: 1px solid rgba(135, 217, 130, 0.3); border-radius: 50%; background: rgba(2, 94, 22, 0.2); color: var(--order-secondary); }
+.order-placed-card h2 { margin: 0 0 8px; color: var(--order-text); font-family: var(--order-headline); font-size: 28px; font-weight: 700; line-height: 36px; }
+.order-placed-card > p { margin: 0 0 24px; color: var(--order-muted); font-size: 16px; line-height: 24px; }
+.order-placed-card > p strong { color: #fff; }
+.order-placed-delivery { display: flex; align-items: center; gap: 16px; width: 100%; margin-bottom: 32px; padding: 16px; border: 1px solid var(--order-border); border-radius: 8px; background: var(--order-section); color: var(--order-tertiary); text-align: left; }
+.order-placed-delivery div { display: flex; flex-direction: column; gap: 4px; }
+.order-placed-delivery span { color: var(--order-muted); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.order-placed-delivery strong { color: var(--order-text); font-family: var(--order-headline); font-size: 20px; line-height: 28px; }
+.order-placed-track-button { width: 100%; min-height: 48px; border: 1px solid var(--order-primary); border-radius: 8px; background: transparent; color: var(--order-primary); font-size: 14px; font-weight: 600; transition: background-color 160ms ease, transform 160ms ease; }
+.order-placed-track-button:hover { background: rgba(255, 181, 154, 0.1); }
+.order-placed-track-button { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.order-placed-loading-icon { animation: order-placed-spin .85s linear infinite; }
+.order-placed-track-button:active, .order-placed-home-button:active { transform: scale(0.98); }
+.order-placed-home-button { width: 100%; min-height: 40px; margin-top: 12px; padding: 8px; border: 0; background: transparent; color: var(--order-muted); font-size: 14px; font-weight: 600; transition: color 160ms ease, transform 160ms ease; }
+.order-placed-home-button:hover { color: #fff; }
+
+@keyframes order-card-in { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+@keyframes order-placed-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 420px) {
+  .order-placed-card { padding: 32px 20px; }
+  .order-placed-header h1 { font-size: 19px; }
+}
+
+@media (min-width: 640px) {
+  .order-placed-header { padding: 0 24px; }
+  .order-placed-main { padding-right: 24px; padding-left: 24px; }
+}
+
+@media (min-width: 900px) {
+  .order-placed-header { height: 72px; padding: 0 64px; }
+  .order-placed-main { padding-top: 104px; padding-bottom: 48px; }
+}
